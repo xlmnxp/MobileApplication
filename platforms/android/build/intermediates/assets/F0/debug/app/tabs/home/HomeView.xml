@@ -1,0 +1,18 @@
+<!--
+This is the component view that represents the 'Home' tab.
+Feel free to customize layouts and components to change how the tab view looks.
+-->
+<!-- class="page-content" -->
+<GridLayout loaded="onLoaded">
+    <ListView items="{{ source }}"  loaded="onLoaded" itemLoading="onItemLoading" itemTap="onItemTap">
+        <ListView.itemTemplate>
+            <GridLayout rows="*" columns="*,200">
+                <GridLayout col="0" rows="20,*">
+                    <Button text="row 0" row="0" />
+                    <Button text="row 1" row="1" />                    
+                </GridLayout>
+                <GridLayout col="1"></GridLayout>
+            </GridLayout>
+        </ListView.itemTemplate>
+    </ListView>
+</GridLayout>

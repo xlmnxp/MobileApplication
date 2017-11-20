@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-v4-25.3.1_dcbd678fa054cb9ca23d9fe625fd4337d526f80e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/exploded-aar/widgets-release/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="dd431d6aa9ce9dc0d429fcd239d412a82ea0e9a7">
+        <dex dex="/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/pre-dexed/F0/debug/intermediates-exploded-aar-widgets-release_e52e1af96d874c3354d8b7c20d1be5e67ce07d5e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-appcompat-v7-25.3.1_632f5688521c0125b92087cc58c3c4da5c14f254.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/exploded-aar/com.android.support/support-compat/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-compat-25.3.1_e040521a9d4ec209b851fd2efd11403c5a95194b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/exploded-aar/com.android.support/design/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-design-25.3.1_4da3160c960be47fe9ecb4c976e847c8969cc819.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/exploded-aar/nativescript-optimized/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="746274223beb11b1cda7854d7eec3038695c2c93">
+        <dex dex="/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/pre-dexed/F0/debug/intermediates-exploded-aar-nativescript-optimized_b8c8a0bc2e9cf3546c05e40e2a72fa7f22c853d2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-core-ui-25.3.1_884c9f023016f0f8746a45f30e864a941796ca74.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-vector-drawable-25.3.1_c12a9d66f5e4857bf3ca5955f9a9b90c9aa5d65f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-animated-vector-drawable-25.3.1_a9b630a206a77dc6bc393aa8f54b32e539f8e0df.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-core-utils-25.3.1_a4bc7a471baf82eec7764f367999e4c64dde3b18.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/exploded-aar/com.android.support/transition/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-transition-25.3.1_93b3469fa2935f352304cfd775188fe328d7bfd6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/exploded-aar/com.android.support/support-fragment/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-fragment-25.3.1_f14849e514996641ff780d3b9b780b53b7bbbdbc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-media-compat-25.3.1_c96a8c9cdfbf8e5394177f4aa1fcd4a39bbfc062.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/xlmnxp/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/pre-dexed/F0/debug/support-annotations-25.3.1_c993c3464366c3da6adebf273083552a551ca0da.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-recyclerview-v7-25.3.1_796c586d6ae7413e3f08f78093abdee7333a2d8c.jar" />
+    </item>
+
+</items>

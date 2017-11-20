@@ -1,0 +1,89 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "discourse-sdk",
+        "scope": null,
+        "escapedName": "discourse-sdk",
+        "name": "discourse-sdk",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/home/xlmnxp/Documents/Nativescript/aosus"
+    ]
+  ],
+  "_from": "discourse-sdk@latest",
+  "_id": "discourse-sdk@1.0.3",
+  "_inCache": true,
+  "_location": "/discourse-sdk",
+  "_nodeVersion": "6.3.1",
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/discourse-sdk-1.0.3.tgz_1477996538474_0.8752768291160464"
+  },
+  "_npmUser": {
+    "name": "99xt",
+    "email": "ashanf@99x.lk"
+  },
+  "_npmVersion": "3.10.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "discourse-sdk",
+    "scope": null,
+    "escapedName": "discourse-sdk",
+    "name": "discourse-sdk",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/discourse-sdk/-/discourse-sdk-1.0.3.tgz",
+  "_shasum": "f11d418e6eee2a299fd31180d22eff8af193dd9d",
+  "_shrinkwrap": null,
+  "_spec": "discourse-sdk",
+  "_where": "/home/xlmnxp/Documents/Nativescript/aosus",
+  "author": {
+    "name": "Jason Reynolds ,Niroshan Ranapathi"
+  },
+  "dependencies": {
+    "querystring": "^0.2.0",
+    "request": "^2.75.0",
+    "sync-request": "^3.0.1"
+  },
+  "description": "This npm module allows to consume the discourse api",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "f11d418e6eee2a299fd31180d22eff8af193dd9d",
+    "tarball": "https://registry.npmjs.org/discourse-sdk/-/discourse-sdk-1.0.3.tgz"
+  },
+  "gitHead": "d1c78a44496e8cc99c6ad2671b71fa576c197c26",
+  "keywords": [
+    "discourse-api",
+    "node.js",
+    "express.js"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "99xt",
+      "email": "ashanf@99x.lk"
+    },
+    {
+      "name": "niroshanr",
+      "email": "niroshanrd.13@cse.mrt.ac.lk"
+    }
+  ],
+  "name": "discourse-sdk",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.3"
+}
