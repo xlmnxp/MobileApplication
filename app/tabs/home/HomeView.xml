@@ -4,13 +4,12 @@ Feel free to customize layouts and components to change how the tab view looks.
 -->
 <!-- class="page-content" -->
 <GridLayout loaded="onLoaded">
-    <ListView items="{{ posts }}"  loaded="onLoaded" itemLoading="onItemLoading" itemTap="onItemTap">
+    <ListView items="{{ posts }}" id="categoriesList">
         <ListView.itemTemplate>
             <GridLayout rows="auto,*" columns="auto,*">
-                <Image class="userAvatar" stretch="fill" col="0" rowSpan="2" src="{{ avatar }}" />
-                <Button class="topicTitle" text="{{ title }}" col="1" row="0"/>
+                <Image class="userAvatar" stretch="fill" col="0" rowSpan="2" src="{{ 'https://aosus.org' + uploaded_logo.url }}" />
+                <Button class="topicTitle" text="{{ name }}" col="1" row="0"/>
                 <Label class="topicDescription" text="{{ description }}" textWrap="true" col="1" row="1"/>
-                
             </GridLayout>
         </ListView.itemTemplate>
     </ListView>

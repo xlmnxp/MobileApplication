@@ -5,5 +5,5 @@ import { HomeViewModel } from "./home-view-model";
 
 export function onLoaded(args: EventData) {
     const component = <StackLayout>args.object;
-    component.bindingContext = new HomeViewModel();
+    component.bindingContext = new HomeViewModel(component);
 }
