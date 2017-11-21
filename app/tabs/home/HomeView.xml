@@ -4,7 +4,7 @@ Feel free to customize layouts and components to change how the tab view looks.
 -->
 <!-- class="page-content" -->
 <GridLayout loaded="onLoaded">
-    <ListView items="{{ posts }}" id="categoriesList">
+    <ListView items="{{ categories }}" id="categoriesList">
         <ListView.itemTemplate>
             <GridLayout rows="auto,*" columns="auto,*">
                 <Image class="userAvatar" stretch="fill" col="0" rowSpan="2" src="{{ 'https://aosus.org' + uploaded_logo.url }}" />
