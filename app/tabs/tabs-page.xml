@@ -4,7 +4,8 @@
   xmlns:browse="/tabs/browse">
     <Page.actionBar>
         <ActionBar class="action-bar">
-          <Label text="{{ title }}" class="action-bar-title" />
+          <Label text="مجتمع أسس" class="action-bar-title" />
+          <ActionItem ios.systemIcon="2" android.systemIcon="ic_menu_info_details" ios.position="right"></ActionItem>
         </ActionBar>
     </Page.actionBar>
 
