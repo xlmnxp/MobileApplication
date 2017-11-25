@@ -9,19 +9,29 @@
     // text-align: center;
     vertical-align: middle;
 }
-
 .topicDetails{
-    margin: 3px;
+    margin: 6px;
+    font-size: 14px;
     text-align: center;
+}
+.topicTags{
+    margin: 3px;
+    text-align: center;    
+}
+.topicDetails,.topicTags{
     margin-top: 15px;
     margin-bottom: 15px;
 }
+.topicTags{
+    margin-top: 0px;
+}    
 
-.tagLabelDarken{
-    color: $btn-color-secondary;
-}
 .tagLabel{
-    color: $btn-color;    
+    color: $white;  
+    padding: 5px;
+    border-radius: 3%;
+    background-color: #0d2e4b;
+    font-weight: bold;
 }
 .topicImage{
     width: 120px;
@@ -30,12 +40,6 @@
     vertical-align: middle;
 }
 
-.topicIndex{
-    vertical-align:top;
-    font-size: 32px;
-    text-align: center;
-    font-weight: bold;
-    color: $page-icon-color;
-    margin: 8px;
-    width: 40px;
+#loading{
+    color: #0d2e4b;
 }
