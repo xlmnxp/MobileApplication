@@ -2,7 +2,46 @@
 This is the component view that represents the 'Browse' tab.
 Feel free to customize layouts and components to change how the tab view looks.
 -->
-<GridLayout class="page-content" loaded="onLoaded">
-    <Label class="page-icon fa" text="&#xf1ea;"></Label>
-    <Label class="page-placeholder" text="<!-- Page content goes here -->"></Label>
+<!-- class="page-content" -->
+<GridLayout loaded="onLoaded">
+    <ActivityIndicator width="100" height="100" id="loading" busy="true" />
+    <ListView items="{{ latestTopics }}" id="latestTopicsList">
+        <ListView.itemTemplate>
+            <GridLayout rows="*,auto">
+                <Button class="topicTitle btn btn-primary btn-hover" text="{{ title }}" col="0" colSpan="3" row="0"/>
+                <GridLayout row="1" columns="auto,auto,auto" style="text-align: center;" verticalAlign="middle">
+                    <Label class="topicDetails" textWrap="true" col="0">
+                        <Label.formattedText>
+                            <FormattedString>
+                                <FormattedString.spans>
+                                    <Span class="fa" text="&#xf112; " style="font-size: 20px;"></Span>
+                                    <Span text="{{ 'الردود ' + reply_count }}" fontWeight="Bold"></Span>
+                                </FormattedString.spans>
+                            </FormattedString>
+                        </Label.formattedText>
+                    </Label>
+                    <Label class="topicDetails" textWrap="true" col="1">
+                        <Label.formattedText>
+                            <FormattedString>
+                                <FormattedString.spans>
+                                    <Span class="fa" text="&#xf06e; " style="font-size: 20px;"></Span>
+                                    <Span text="{{ 'المشاهدات ' + views }}" fontWeight="Bold"></Span>
+                                </FormattedString.spans>
+                            </FormattedString>
+                        </Label.formattedText>
+                    </Label>
+                    <Label class="topicDetails" textWrap="true" col="2">
+                        <Label.formattedText>
+                            <FormattedString>
+                                <FormattedString.spans>
+                                    <Span class="fa" text="&#xf073; " style="font-size: 20px;"></Span>
+                                    <Span text="{{ created_at }}" fontWeight="Bold"></Span>
+                                </FormattedString.spans>
+                            </FormattedString>
+                        </Label.formattedText>
+                    </Label>
+                </GridLayout>
+            </GridLayout>
+        </ListView.itemTemplate>
+    </ListView>
 </GridLayout>

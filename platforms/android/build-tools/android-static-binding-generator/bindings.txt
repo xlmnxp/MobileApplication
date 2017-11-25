@@ -152,4 +152,4 @@ java.lang.Runnable*_ftns_modules_tns_core_modules_timer_timer_l54_c20__*run***
 observable_1.Observable*_frnal_ts_helpers_l58_c38__TabsViewModel****
 observable_1.Observable*_frnal_ts_helpers_l58_c38__SearchViewModel****
 observable_1.Observable*_frnal_ts_helpers_l58_c38__HomeViewModel****
-observable_1.Observable*_frnal_ts_helpers_l58_c38__BrowseViewModel****
+observable_1.Observable*_frnal_ts_helpers_l58_c38__BrowseViewModel*DateToString***

@@ -4,14 +4,13 @@ Feel free to customize layouts and components to change how the tab view looks.
 -->
 <!-- class="page-content" -->
 <GridLayout loaded="onLoaded">
-    <ListView items="{{ source }}"  loaded="onLoaded" itemLoading="onItemLoading" itemTap="onItemTap">
+    <ActivityIndicator width="100" height="100" id="loading" busy="true" />
+    <ListView items="{{ categories }}" id="categoriesList">
         <ListView.itemTemplate>
-            <GridLayout rows="*" columns="*,200">
-                <GridLayout col="0" rows="20,*">
-                    <Button text="row 0" row="0" />
-                    <Button text="row 1" row="1" />                    
-                </GridLayout>
-                <GridLayout col="1"></GridLayout>
+            <GridLayout rows="auto,*" columns="auto,*">
+                <Image class="userAvatar" stretch="fill" col="0" rowSpan="2" src="{{ 'https://aosus.org' + uploaded_logo.url }}" />
+                <Button class="categoryTitle btn btn-primary btn-active" text="{{ name }}" col="1" row="0"/>
+                <Label class="categoryDescription" text="{{ description }}" textWrap="true" col="1" row="1"/>
             </GridLayout>
         </ListView.itemTemplate>
     </ListView>

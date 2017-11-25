@@ -13,6 +13,7 @@
     "lint": "tslint \"app/**/*.ts\""
   },
   "dependencies": {
+    "moment": "^2.19.2",
     "nativescript-theme-core": "1.0.4",
     "tns-core-modules": "3.3.0",
     "url": "^0.11.0"

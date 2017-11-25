@@ -1,4 +1,13 @@
+@import '../../app-variables';
+
 .topicDetails{
     margin: 3px;
     text-align: center;
+}
+
+.tagLabelDarken{
+    color: $btn-color-secondary;
+}
+.tagLabel{
+    color: $btn-color;    
 }

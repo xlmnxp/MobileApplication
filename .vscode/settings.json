@@ -1,7 +1,7 @@
 {
     "files.exclude": {
         "**/**/*.js": {"when": "$(basename).ts"},
-        // "**/**/*.css": {"when": "$(basename).scss"}
+        "**/**/*.css": {"when": "$(basename).scss"}
     },
     "git.ignoreLimitWarning": true
 }
