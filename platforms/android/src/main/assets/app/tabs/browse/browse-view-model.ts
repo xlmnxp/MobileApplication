@@ -6,7 +6,6 @@ import { ActivityIndicator } from 'ui/activity-indicator';
 import { FormattedString } from "text/formatted-string";
 import { Span } from "text/span";
 import moment = require("moment");
-import { Style } from "tns-core-modules/ui/frame/frame";
 
 export class BrowseViewModel extends Observable {
     public latestTopics: ObservableArray<any> = new ObservableArray([]);
