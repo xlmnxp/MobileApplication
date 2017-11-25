@@ -7,9 +7,10 @@ Feel free to customize layouts and components to change how the tab view looks.
     <ActivityIndicator width="100" height="100" id="loading" busy="true" />
     <ListView items="{{ latestTopics }}" id="latestTopicsList">
         <ListView.itemTemplate>
-            <GridLayout rows="*,auto,auto">
-                <Button class="topicTitle btn btn-primary btn-hover" text="{{ title }}" col="0" colSpan="3" row="0"/>
-                <GridLayout row="1">
+            <GridLayout columns="auto,*,auto" rows="*,auto,auto">
+                <Label class="topicIndex" text="{{ topicIndex }}" col="2"/>
+                <Label class="topicTitle" text="{{ title }}" col="1" row="0"/>
+                <GridLayout row="1" col="1">
                     <Repeater items="{{ tags }}">
                         <Repeater.itemsLayout>
                             <WrapLayout horizontalAlignment="center" />
@@ -24,17 +25,17 @@ Feel free to customize layouts and components to change how the tab view looks.
                         </Repeater.itemTemplate>
                     </Repeater>
                 </GridLayout>
-                <GridLayout row="2" columns="*,*,*" style="text-align: center;" verticalAlign="middle">
-                    <Label class="topicDetails" textWrap="true" col="0">
+                <GridLayout row="2" columns="*,*,*" style="text-align: center;" verticalAlign="middle" col="1">
+                    <Label class="topicDetails" textWrap="true">
                         <FormattedString>
                             <Span class="fa" text="&#xf112; " style="font-size: 20px;"></Span>
-                            <Span text="{{ 'الردود ' + reply_count }}" fontWeight="Bold"></Span>
+                            <Span text="{{ ' ' + reply_count }}" fontWeight="Bold"></Span>
                         </FormattedString>
                     </Label>
                     <Label class="topicDetails" textWrap="true" col="1">
                         <FormattedString>
                             <Span class="fa" text="&#xf06e; " style="font-size: 20px;"></Span>
-                            <Span text="{{ 'المشاهدات ' + views }}" fontWeight="Bold"></Span>
+                            <Span text="{{ ' ' + views }}" fontWeight="Bold"></Span>
                         </FormattedString>
                     </Label>
                     <Label class="topicDetails" textWrap="true" col="2">
@@ -44,6 +45,7 @@ Feel free to customize layouts and components to change how the tab view looks.
                         </FormattedString>
                     </Label>
                 </GridLayout>
+                <Image class="topicImage" src="{{ image_url }}" stretch="aspectFit" row="0" rowSpan="3" col="0" visibility="{{ image_url ? 'visible' : 'collapsed' }}"/>
             </GridLayout>
         </ListView.itemTemplate>
     </ListView>

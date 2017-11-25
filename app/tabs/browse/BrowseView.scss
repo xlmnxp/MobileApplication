@@ -1,8 +1,20 @@
 @import '../../app-variables';
 
+.topicTitle{
+    margin: 4px;
+    // color: $btn-color-secondary;
+    color: #0d2e4b;
+    font-weight: bold;
+    font-size: 22px;
+    // text-align: center;
+    vertical-align: middle;
+}
+
 .topicDetails{
     margin: 3px;
     text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .tagLabelDarken{
@@ -10,4 +22,20 @@
 }
 .tagLabel{
     color: $btn-color;    
+}
+.topicImage{
+    width: 120px;
+    height: 120px;
+    margin: 5px;
+    vertical-align: middle;
+}
+
+.topicIndex{
+    vertical-align:top;
+    font-size: 32px;
+    text-align: center;
+    font-weight: bold;
+    color: $page-icon-color;
+    margin: 8px;
+    width: 40px;
 }

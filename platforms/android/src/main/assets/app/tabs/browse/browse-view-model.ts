@@ -16,8 +16,11 @@ export class BrowseViewModel extends Observable {
         fetch("https://aosus.org/latest.json").then(res => res.json())
         .then(res => {
             let latestTopicsList:ListView = BrowserPage.getViewById("latestTopicsList");
+            let topicIndex = 1;
             let dataTopics = res.topic_list.topics.map(topic => {
                 topic.created_at = moment(topic.created_at).fromNow();
+                topic.topicIndex = topicIndex;
+                topicIndex++;
                 return topic;
             });
             this.latestTopics.push(dataTopics);
