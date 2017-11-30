@@ -6,9 +6,11 @@ import { ActivityIndicator } from "ui/activity-indicator";
 import moment = require("moment");
 
 export class CategoryViewModel extends Observable {
+    public title:string = "";
     topics:ObservableArray<any> = new ObservableArray([]);
-    constructor(public CategoryPage:Page, public categoryId:number) {
+    constructor(public CategoryPage:Page, public categoryId:number, public categoryName:string) {
         super();
+        this.title = categoryName;
         fetch(`https://aosus.org/c/${categoryId}.json`).then(res => res.json())
         .then(res =>{
             let topicsList:ListView = CategoryPage.getViewById("topicsList");
