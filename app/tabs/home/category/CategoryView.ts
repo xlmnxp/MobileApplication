@@ -3,7 +3,7 @@ import { Page } from 'ui/page';
 
 import { CategoryViewModel } from "./category-view-model";
 
-export function onloaded(args: EventData) {
+export function onNavigatedTo(args: EventData) {
     const component = <Page>args.object;
     component.bindingContext = new CategoryViewModel(component,
         component.navigationContext.categoryId,

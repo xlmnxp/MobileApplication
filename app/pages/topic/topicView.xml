@@ -1,0 +1,8 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" navigatedTo="onNavigatedTo">
+    <ActionBar class="action-bar">
+      <Label text="{{ title }}" class="action-bar-title" />
+    </ActionBar>
+    <GridLayout>
+        <WebView id="topicView" loaded="disableZoom"/>
+    </GridLayout>
+</Page>

@@ -5,7 +5,7 @@ Feel free to customize layouts and components to change how the tab view looks.
 <!-- class="page-content" -->
 <GridLayout loaded="onLoaded">
     <ActivityIndicator width="100" height="100" id="loading" busy="true"/>
-    <ListView items="{{ latestTopics }}" id="latestTopicsList">
+    <ListView items="{{ latestTopics }}" id="latestTopicsList" itemTap="{{ navigateToTopic }}">
         <ListView.itemTemplate>
             <GridLayout columns="auto,*" rows="*,auto,auto">
                 <Image class="topicImage" src="{{ image_url }}" stretch="aspectFit" row="0" rowSpan="1" col="0" visibility="{{ image_url ? 'visible' : 'collapsed' }}"/>

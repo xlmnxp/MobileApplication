@@ -5,6 +5,7 @@ import { ListView } from 'ui/list-view';
 import { ActivityIndicator } from 'ui/activity-indicator';
 import { FormattedString } from "text/formatted-string";
 import { Span } from "text/span";
+import { topmost } from 'ui/frame';
 import moment = require("moment");
 
 export class BrowseViewModel extends Observable {
@@ -34,8 +35,16 @@ export class BrowseViewModel extends Observable {
         });
     }
 
-    DateToString(date:any):string{
-        return (new Date(date)
-        .toDateString());
+    public navigateToTopic(topicIndex: any){
+        let topic = this.latestTopics.getItem(topicIndex.index);
+        let topicId = topic.id;
+        let topicTitle = topic.title;
+        topmost().navigate({
+            moduleName: "pages/topic/topicView",
+            context: {
+                topicId: topicId,
+                topicTitle: topicTitle
+            }
+        });
     }
 }
