@@ -1,26 +1,26 @@
 @import '../app-variables';
 
 .topicTitle{
-    margin: 4px;
     // color: $btn-color-secondary;
+    // text-align: center;
+    margin: 4vh;
     color: #0d2e4b;
     font-weight: bold;
-    font-size: 22px;
-    // text-align: center;
+    font-size: 22vh;
     vertical-align: middle;
 }
 .topicDetails{
-    margin: 6px;
-    font-size: 14px;
+    margin: 6vh;
+    font-size: 14vh;
     text-align: center;
 }
 .topicTags{
-    margin: 3px;
+    margin: 3vh;
     text-align: center;    
 }
 .topicDetails,.topicTags{
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 15vh;
+    margin-bottom: 15vh;
 }
 .topicTags{
     margin-top: 0px;
@@ -28,15 +28,15 @@
 
 .tagLabel{
     color: $white;  
-    padding: 5px;
+    padding: 5vh;
     border-radius: 3%;
     background-color: #0d2e4b;
     font-weight: bold;
 }
 .topicImage{
-    width: 120px;
-    height: 120px;
-    margin: 5px;
+    width: 120vh;
+    height: 120vh;
+    margin: 5vh;
     vertical-align: middle;
 }
 

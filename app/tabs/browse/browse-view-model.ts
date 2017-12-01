@@ -11,7 +11,7 @@ export class BrowseViewModel extends Observable {
     public latestTopics: ObservableArray<any> = new ObservableArray([]);
     constructor(public BrowserPage:StackLayout) {
         super();
-        moment.locale('ar');        
+        moment.locale('ar');
         fetch("https://aosus.org/latest.json").then(res => res.json())
         .then(res => {
             let latestTopicsList:ListView = BrowserPage.getViewById("latestTopicsList");
