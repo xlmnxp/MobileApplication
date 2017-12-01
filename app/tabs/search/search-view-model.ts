@@ -8,8 +8,5 @@ export class SearchViewModel extends Observable {
     constructor(public SearchPage:StackLayout) {
         super();
         this.searchbar = SearchPage.getViewById('searchBar');
-        if(isAndroid){
-            this.searchbar.android.clearFocus();
-        }
     }
 }

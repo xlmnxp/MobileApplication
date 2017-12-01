@@ -5,6 +5,6 @@ Feel free to customize layouts and components to change how the tab view looks.
 <!-- class="page-content" -->
 <StackLayout loaded="onLoaded">
     <!-- clear="onClear" submit="onSubmit" -->
-    <SearchBar id="searchBar" hint="بحث" text=""/>
+    <SearchBar id="searchBar" hint="بحث" text="" loaded="disableFocus"/>
     
 </StackLayout>
