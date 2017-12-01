@@ -2,8 +2,8 @@
 
 // Place any CSS rules you want to apply only on Android here
 TabView {
-    tab-text-color: $success-dark;
-    selected-tab-text-color: $success-dark;
-    android-selected-tab-text-color: $success-dark;
+    tab-text-color: $accent-dark;
+    selected-tab-text-color: $accent-dark;
+    android-selected-tab-text-color: $accent-dark;
     android-selected-tab-highlight-color: $item-active-color;
 }

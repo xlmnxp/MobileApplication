@@ -3,6 +3,7 @@ import { ObservableArray } from "data/observable-array/observable-array";
 import { StackLayout } from 'ui/layouts/stack-layout';
 import { ListView } from 'ui/list-view';
 import { ActivityIndicator } from "ui/activity-indicator";
+import { topmost } from "ui/frame";
 
 export class HomeViewModel extends Observable {
     categories:ObservableArray<any> = new ObservableArray([]);
@@ -22,6 +23,19 @@ export class HomeViewModel extends Observable {
             }else if(this.categories.length <= 0){
                 var activityIndicator:ActivityIndicator = HomePage.getViewById('loading');
                 activityIndicator.visibility = "visible";
+            }
+        });
+    }
+
+    public navigateToCategory(categoryIndex: any){
+        let category = this.categories.getItem(categoryIndex.index);
+        let categoryId = category.id;
+        let categoryName = category.name;
+        topmost().navigate({
+            moduleName: "tabs/home/category/CategoryView",
+            context: {
+                categoryId: categoryId,
+                categoryName: categoryName
             }
         });
     }

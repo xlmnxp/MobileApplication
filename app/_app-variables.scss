@@ -13,8 +13,8 @@ $blue-50: rgba($blue-dark, 0.5) !default;
 $blue-20: rgba($blue-dark, 0.2) !default;
 $blue-10: rgba($blue-dark, 0.1) !default;
 
-$accent-dark: #06CE6A !default;//#3A53FF !default;
-$accent-light: #00E676 !default;//#4781FE !default;
+$accent-dark: #0d2e4b !default;//#3A53FF !default;
+$accent-light: #02556E !default;//#4781FE !default;
 
 $success-dark: #06CE6A !default;
 $success-light: #00E676 !default;
@@ -53,8 +53,8 @@ $item-color-android : #737373;
 $item-active-background: #F8F8F8;
 $item-active-color: $accent;
 $item-active-icon-color: $item-active-color;
-$item-color-ios: $success-dark;
-$item-color-android: $success-dark;
+$item-color-ios: $accent-dark;
+$item-color-android: $accent-dark;
 
 $side-drawer-header-background: #fafafa;
 $side-drawer-header-brand: #737373;
@@ -71,6 +71,6 @@ $btn-color-secondary: darken($btn-color, 10%);
 $btn-color-outline-highlighted: lighten($btn-color, 10%);
 
 //Text colors
-$headings-color: $success-dark;
-$secondary: $success-dark;
-$text-color: $success-dark;
+$headings-color: $accent-dark;
+$secondary: $accent-dark;
+$text-color: $accent-light;

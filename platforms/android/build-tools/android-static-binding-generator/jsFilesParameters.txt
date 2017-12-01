@@ -159,5 +159,7 @@
 /home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/tabs/search/search-view-model.js
 /home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/tabs/home/HomeView.js
 /home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/tabs/home/home-view-model.js
+/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/tabs/home/category/category-view-model.js
+/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/tabs/home/category/CategoryView.js
 /home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/tabs/browse/BrowseView.js
 /home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/tabs/browse/browse-view-model.js

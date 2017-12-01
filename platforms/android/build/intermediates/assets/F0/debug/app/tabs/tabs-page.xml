@@ -2,12 +2,10 @@
   xmlns:home="/tabs/home"
   xmlns:search="/tabs/search"
   xmlns:browse="/tabs/browse">
-    <Page.actionBar>
-        <ActionBar class="action-bar">
-          <Label text="مجتمع أسس" class="action-bar-title" />
-          <ActionItem ios.systemIcon="2" android.systemIcon="ic_menu_info_details" ios.position="right"></ActionItem>
-        </ActionBar>
-    </Page.actionBar>
+    <ActionBar class="action-bar">
+      <Label text="مجتمع أسس" class="action-bar-title" />
+      <ActionItem ios.systemIcon="2" android.systemIcon="ic_menu_info_details" ios.position="right"></ActionItem>
+    </ActionBar>
 
     <!--
     The TabView component provides a simple way to navigate between different views by
