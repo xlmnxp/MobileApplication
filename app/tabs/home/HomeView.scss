@@ -9,6 +9,7 @@
     border-color: $item-active-icon-color;
     vertical-align: middle;
     margin: 9vh;
+    background-color: scale-color($item-active-color, $lightness: 90%);
 }
 
 .categoryDescription{

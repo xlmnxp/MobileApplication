@@ -4,16 +4,16 @@ import { StackLayout } from 'ui/layouts/stack-layout';
 import { ListView } from 'ui/list-view';
 import { ActivityIndicator } from "ui/activity-indicator";
 import { topmost } from "ui/frame";
+import { ObservableProperty } from "../../shared/observable-property-decorator";
 
 export class HomeViewModel extends Observable {
-    categories:ObservableArray<any> = new ObservableArray([]);
+    @ObservableProperty() categories:ObservableArray<any> = new ObservableArray([]);
     constructor(public HomePage:StackLayout) {
         super();
         fetch("https://aosus.org/categories.json").then(res => res.json())
         .then(res =>{
             let categoriesList:ListView = HomePage.getViewById("categoriesList");
             this.categories.push(res.category_list.categories);
-            categoriesList.refresh();
         });
 
         this.categories.on("change",()=>{

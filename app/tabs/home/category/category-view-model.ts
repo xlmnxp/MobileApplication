@@ -5,10 +5,11 @@ import { ListView } from 'ui/list-view';
 import { ActivityIndicator } from "ui/activity-indicator";
 import { topmost } from 'ui/frame';
 import moment = require("moment");
+import { ObservableProperty } from "../../../shared/observable-property-decorator";
 
 export class CategoryViewModel extends Observable {
-    public title:string = "";
-    topics:ObservableArray<any> = new ObservableArray([]);
+    @ObservableProperty() public title:string = "";
+    @ObservableProperty() topics:ObservableArray<any> = new ObservableArray([]);
     constructor(public CategoryPage:Page, public categoryId:number, public categoryName:string) {
         super();
         this.title = categoryName;
@@ -20,7 +21,6 @@ export class CategoryViewModel extends Observable {
                 return topic;
             });
             this.topics.push(dataTopics);
-            topicsList.refresh();
         });
 
         this.topics.on("change",()=>{

@@ -7,9 +7,10 @@ import { FormattedString } from "text/formatted-string";
 import { Span } from "text/span";
 import { topmost } from 'ui/frame';
 import moment = require("moment");
+import { ObservableProperty } from "../../shared/observable-property-decorator";
 
 export class BrowseViewModel extends Observable {
-    public latestTopics: ObservableArray<any> = new ObservableArray([]);
+    @ObservableProperty() public latestTopics: ObservableArray<any> = new ObservableArray([]);
     constructor(public BrowserPage:StackLayout) {
         super();
         moment.locale('ar');
@@ -21,7 +22,6 @@ export class BrowseViewModel extends Observable {
                 return topic;
             });
             this.latestTopics.push(dataTopics);
-            latestTopicsList.refresh();
         });
 
         this.latestTopics.on("change",()=>{

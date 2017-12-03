@@ -4,9 +4,10 @@ import { Page } from 'ui/page';
 import { WebView } from 'ui/web-view';
 import { ActivityIndicator } from "ui/activity-indicator";
 import moment = require("moment");
+import { ObservableProperty } from "../../shared/observable-property-decorator";
 
 export class TopicViewModel extends Observable {
-    public title:string = "";
+    @ObservableProperty() title:string = "";
     constructor(public TopicPage:Page, public topicId:number, public topicTitle:string) {
         super();
         this.title = topicTitle;
