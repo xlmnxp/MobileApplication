@@ -5,13 +5,14 @@ import { WebView } from 'ui/web-view';
 import { ActivityIndicator } from "ui/activity-indicator";
 import moment = require("moment");
 import { ObservableProperty } from "../../shared/observable-property-decorator";
+import { config } from "../../config";
 
 export class TopicViewModel extends Observable {
     @ObservableProperty() title:string = "";
     constructor(public TopicPage:Page, public topicId:number, public topicTitle:string) {
         super();
         this.title = topicTitle;
-        fetch(`https://aosus.org/t/topic/${topicId}.json`).then(res => res.json())
+        fetch(`${config.url}t/topic/${topicId}.json`).then(res => res.json())
         .then(res =>{
             let topicView:WebView = TopicPage.getViewById("topicView");
             topicView.src = `<style>a {
@@ -33,9 +34,12 @@ export class TopicViewModel extends Observable {
               width: 100%;
               min-width: 100%;
               max-width: 100%;
+              height: auto;
           }
-          code{
+
+          code,pre{
               word-wrap: break-word;
+              direction: ltr;
           }
           
           img.emoji {

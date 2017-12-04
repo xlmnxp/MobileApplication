@@ -6,6 +6,7 @@ import { ActivityIndicator } from "ui/activity-indicator";
 import { topmost } from 'ui/frame';
 import moment = require("moment");
 import { ObservableProperty } from "../../../shared/observable-property-decorator";
+import { config } from '../../../config';
 
 export class CategoryViewModel extends Observable {
     @ObservableProperty() public title:string = "";
@@ -13,7 +14,7 @@ export class CategoryViewModel extends Observable {
     constructor(public CategoryPage:Page, public categoryId:number, public categoryName:string) {
         super();
         this.title = categoryName;
-        fetch(`https://aosus.org/c/${categoryId}.json`).then(res => res.json())
+        fetch(`${config.url}c/${categoryId}.json`).then(res => res.json())
         .then(res =>{
             let topicsList:ListView = CategoryPage.getViewById("topicsList");
             let dataTopics = res.topic_list.topics.map(topic => {
