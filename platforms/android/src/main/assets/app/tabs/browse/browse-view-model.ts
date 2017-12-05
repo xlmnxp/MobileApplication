@@ -1,7 +1,6 @@
 import { Observable } from "data/observable";
 import { StackLayout } from 'ui/layouts/stack-layout';
 import { ObservableArray } from 'data/observable-array/observable-array';
-import { ListView } from 'ui/list-view';
 import { ActivityIndicator } from 'ui/activity-indicator';
 import { FormattedString } from "text/formatted-string";
 import { Span } from "text/span";
@@ -17,7 +16,6 @@ export class BrowseViewModel extends Observable {
         moment.locale('ar');
         fetch(config.url + "latest.json").then(res => res.json())
         .then(res => {
-            let latestTopicsList:ListView = BrowserPage.getViewById("latestTopicsList");
             let dataTopics = res.topic_list.topics.map(topic => {
                 topic.created_at = moment(topic.created_at).fromNow();
                 return topic;

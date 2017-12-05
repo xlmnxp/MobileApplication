@@ -1,7 +1,6 @@
 import { Observable } from "data/observable";
 import { ObservableArray } from "data/observable-array/observable-array";
 import { Page } from 'ui/page';
-import { ListView } from 'ui/list-view';
 import { ActivityIndicator } from "ui/activity-indicator";
 import { topmost } from 'ui/frame';
 import moment = require("moment");
@@ -16,7 +15,6 @@ export class CategoryViewModel extends Observable {
         this.title = categoryName;
         fetch(`${config.url}c/${categoryId}.json`).then(res => res.json())
         .then(res =>{
-            let topicsList:ListView = CategoryPage.getViewById("topicsList");
             let dataTopics = res.topic_list.topics.map(topic => {
                 topic.created_at = moment(topic.created_at).fromNow();
                 return topic;

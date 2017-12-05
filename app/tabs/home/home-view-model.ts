@@ -1,7 +1,6 @@
 import { Observable } from "data/observable";
 import { ObservableArray } from "data/observable-array/observable-array";
 import { StackLayout } from 'ui/layouts/stack-layout';
-import { ListView } from 'ui/list-view';
 import { ActivityIndicator } from "ui/activity-indicator";
 import { topmost } from "ui/frame";
 import { ObservableProperty } from "../../shared/observable-property-decorator";
@@ -13,7 +12,6 @@ export class HomeViewModel extends Observable {
         super();
         fetch(config.url + "categories.json").then(res => res.json())
         .then(res =>{
-            let categoriesList:ListView = HomePage.getViewById("categoriesList");
             res.category_list.categories = res.category_list.categories.map(category => {
                 if(category.uploaded_logo){
                     category.uploaded_logo.url = config.url + category.uploaded_logo.url;
