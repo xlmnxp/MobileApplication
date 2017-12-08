@@ -5,12 +5,12 @@ Feel free to customize layouts and components to change how the tab view looks.
 <!-- class="page-content" -->
 <GridLayout loaded="onLoaded">
     <ActivityIndicator width="100" height="100" id="loading" busy="true"/>
-    <ListView items="{{ latestTopics }}" id="latestTopicsList">
+    <ListView items="{{ latestTopics }}" id="latestTopicsList" itemTap="{{ navigateToTopic }}">
         <ListView.itemTemplate>
             <GridLayout columns="auto,*" rows="*,auto,auto">
-                <Image class="topicImage" src="{{ image_url }}" stretch="aspectFit" row="0" rowSpan="3" col="0" visibility="{{ image_url ? 'visible' : 'collapsed' }}"/>
+                <Image class="topicImage" src="{{ image_url }}" stretch="aspectFit" row="0" rowSpan="1" col="0" visibility="{{ image_url ? 'visible' : 'collapsed' }}"/>
                 <Label class="topicTitle" text="{{ title }}" col="1" row="0" textWrap="true"/>
-                <GridLayout row="1" columns="*,*,*" verticalAlign="middle" col="1">
+                <GridLayout row="1" columns="*,*,*" verticalAlign="middle" col="0" colSpan="2">
                     <Label class="topicDetails" textWrap="true">
                         <FormattedString>
                             <Span class="fa" text="&#xf112; " style="font-size: 20px;"></Span>
@@ -30,7 +30,7 @@ Feel free to customize layouts and components to change how the tab view looks.
                         </FormattedString>
                     </Label>
                 </GridLayout>
-                <GridLayout row="2" col="1" class="topicTags" visibility="{{ (tags.length != 0) ? 'visible' : 'collapsed' }}">
+                <GridLayout row="2" class="topicTags" visibility="{{ (tags.length != 0) ? 'visible' : 'collapsed' }}" col="0" colSpan="2">
                     <Repeater items="{{ tags }}">
                         <Repeater.itemsLayout>
                             <FlexboxLayout flexWrap="wrap" justifyContent="flex-end" />

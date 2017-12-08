@@ -3,8 +3,53 @@ This is the component view that represents the 'Search' tab.
 Feel free to customize layouts and components to change how the tab view looks.
 -->
 <!-- class="page-content" -->
-<StackLayout loaded="onLoaded">
-    <!-- clear="onClear" submit="onSubmit" -->
-    <SearchBar id="searchBar" hint="بحث" text="" loaded="disableFocus"/>
-    
-</StackLayout>
+<ScrollView loaded="onLoaded">
+    <StackLayout>
+        <!-- clear="onClear" submit="onSubmit" -->
+        <SearchBar id="searchBar" hint="بحث" text="" loaded="disableFocus"/>
+            <ActivityIndicator width="100" height="100" id="loading" busy="true"/>
+            <ListView items="{{ topics }}" id="topicsList" itemTap="{{ navigateToTopic }}">
+            <ListView.itemTemplate>
+                <GridLayout columns="auto,*" rows="*,auto,auto">
+                    <Image class="topicImage" src="{{ image_url }}" stretch="aspectFit" row="0" rowSpan="1" col="0" visibility="{{ image_url ? 'visible' : 'collapsed' }}"/>
+                    <Label class="topicTitle" text="{{ title }}" col="1" row="0" textWrap="true"/>
+                    <GridLayout row="1" columns="*,*,*" verticalAlign="middle" col="0" colSpan="2">
+                        <Label class="topicDetails" textWrap="true">
+                            <FormattedString>
+                                <Span class="fa" text="&#xf112; " style="font-size: 20px;"></Span>
+                                <Span text="{{ ' ' + reply_count }}" fontWeight="Bold"></Span>
+                            </FormattedString>
+                        </Label>
+                        <Label class="topicDetails" textWrap="true" col="1" verticalAlign="middle">
+                            <FormattedString>
+                                <Span class="fa" text="&#xf06e; " style="font-size: 20px;"></Span>
+                                <Span text="{{ ' ' + views }}" fontWeight="Bold"></Span>
+                            </FormattedString>
+                        </Label>
+                        <Label class="topicDetails" textWrap="true" col="2">
+                            <FormattedString>
+                                <Span class="fa" text="&#xf073; " style="font-size: 20px;"></Span>
+                                <Span text="{{ created_at }}" fontWeight="Bold"></Span>
+                            </FormattedString>
+                        </Label>
+                    </GridLayout>
+                    <GridLayout row="2" class="topicTags" visibility="{{ (tags.length != 0) ? 'visible' : 'collapsed' }}" col="0" colSpan="2">
+                        <Repeater items="{{ tags }}">
+                            <Repeater.itemsLayout>
+                                <FlexboxLayout flexWrap="wrap" justifyContent="flex-end" />
+                            </Repeater.itemsLayout>
+                            <Repeater.itemTemplate>
+                                <Label class="tagLabel" style="margin:3px;">
+                                    <FormattedString>
+                                        <Span text="{{ $value + ' ' }}"></Span>
+                                        <Span class="fa" text="&#xf02c;" style="font-size: 12px;"></Span>
+                                    </FormattedString>
+                                </Label>
+                            </Repeater.itemTemplate>
+                        </Repeater>
+                    </GridLayout>
+                </GridLayout>
+            </ListView.itemTemplate>
+            </ListView>
+    </StackLayout>
+</ScrollView>

@@ -8,8 +8,8 @@ Feel free to customize layouts and components to change how the tab view looks.
     <ListView items="{{ categories }}" id="categoriesList" itemTap="{{ navigateToCategory }}">
         <ListView.itemTemplate>
             <GridLayout rows="auto,*" columns="auto,*">
-                <Image class="userAvatar" stretch="fill" col="0" rowSpan="2" src="{{ 'https://aosus.org' + uploaded_logo.url }}" borderColor="{{ '#' + color }}"/>
-                <Button class="categoryTitle btn btn-primary btn-active" text="{{ name }}" col="1" row="0" android:backgroundColor="{{ '#' + color }}" ios:backgroundColor="{{ '#' + color }}" loaded="disableFocus"/>
+                <Image class="userAvatar" stretch="fill" col="0" rowSpan="2" src="{{ uploaded_logo.url }}" borderColor="{{ '#' + color }}" visibility="{{ uploaded_logo.url ? 'visible' : 'collapsed' }}"/>
+                <Button class="categoryTitle btn btn-primary btn-active" text="{{ name }}" col="1" row="0" android:backgroundColor="{{ '#' + color }}" ios:backgroundColor="rgba(0,0,0,0)" ios:color="{{ '#' + color }}" loaded="disableFocus"/>
                 <Label class="categoryDescription" text="{{ description }}" textWrap="true" col="1" row="1"/>
             </GridLayout>
         </ListView.itemTemplate>

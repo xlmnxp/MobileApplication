@@ -13,11 +13,10 @@ export class BrowseViewModel extends Observable {
     @ObservableProperty() public latestTopics: ObservableArray<any> = new ObservableArray([]);
     constructor(public BrowserPage:StackLayout) {
         super();
-        moment.locale('ar');
         fetch(config.url + "latest.json").then(res => res.json())
         .then(res => {
             let dataTopics = res.topic_list.topics.map(topic => {
-                topic.created_at = moment(topic.created_at).fromNow();
+                topic.created_at = moment(topic.created_at).locale("ar").fromNow();
                 return topic;
             });
             this.latestTopics.push(dataTopics);

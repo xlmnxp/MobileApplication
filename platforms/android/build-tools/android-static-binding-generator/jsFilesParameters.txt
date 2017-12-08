@@ -1,5 +1,6 @@
 /home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/app.js
 /home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/bundle-config.js
+/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/config.js
 /home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/shared/observable-property-decorator.js
 /home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/tns_modules/tns-core-modules/bundle-entry-points.js
 /home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/tns_modules/tns-core-modules/fps-meter/fps-meter.js
@@ -153,6 +154,8 @@
 /home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/tns_modules/tns-core-modules/color/color.js
 /home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/tns_modules/tns-core-modules/color/color-common.js
 /home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/tns_modules/tns-core-modules/timer/timer.js
+/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/pages/topic/topic-view-model.js
+/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/pages/topic/topicView.js
 /home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/tabs/tabs-view-model.js
 /home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/tabs/tabs-page.js
 /home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/tabs/search/SearchView.js

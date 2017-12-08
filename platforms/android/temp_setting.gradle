@@ -1,5 +1,13 @@
 android {
             defaultConfig {
                 applicationId = "org.aosus"
+
+                if (false) {
+                    minSdkVersion = false
+                }
+
+                if (false) {
+                    targetSdkVersion = false
+                }
             }
         }
