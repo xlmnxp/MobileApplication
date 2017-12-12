@@ -7,6 +7,7 @@ Feel free to customize layouts and components to change how the tab view looks.
     <SearchBar id="searchBar" hint="بحث" text="" loaded="disableFocus" submit="{{ doSearch }}" row="0"/>
     <GridLayout row="1" rows="*">
         <ActivityIndicator width="100" height="100" id="loading" busy="true"/>
+        <Label text="لا توجد أية نتائج." id="SearchMessage"></Label>
         <ListView items="{{ searchResult }}" itemTap="{{ navigateToTopic }}" row="0">
         <ListView.itemTemplate>
             <GridLayout columns="auto,*" rows="*,auto,auto">

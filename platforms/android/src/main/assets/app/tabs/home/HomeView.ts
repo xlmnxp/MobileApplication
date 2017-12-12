@@ -6,7 +6,9 @@ import { HomeViewModel } from "./home-view-model";
 
 export function onLoaded(args: EventData) {
     const component = <StackLayout>args.object;
-    component.bindingContext = new HomeViewModel(component);
+    if(Object.keys(component.bindingContext).indexOf('HomePage') == -1){        
+        component.bindingContext = new HomeViewModel(component);
+    }
 }
 
 export const disableFocus = (args) => isAndroid ? args.object.android.setFocusable(false) : false;
