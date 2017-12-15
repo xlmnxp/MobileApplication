@@ -16,7 +16,7 @@ export class CategoryViewModel extends Observable {
         fetch(`${config.url}c/${categoryId}.json`).then(res => res.json())
         .then(res =>{
             let dataTopics = res.topic_list.topics.map(topic => {
-                topic.created_at = moment(topic.created_at).fromNow();
+                topic.created_at = moment(topic.created_at).locale("ar").fromNow();
                 return topic;
             });
             this.topics.push(dataTopics);

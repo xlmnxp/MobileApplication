@@ -5,5 +5,7 @@ import { BrowseViewModel } from "./browse-view-model";
 
 export function onLoaded(args: EventData) {
     const component = <StackLayout>args.object;
-    component.bindingContext = new BrowseViewModel(component);
+    if(Object.keys(component.bindingContext).indexOf('BrowserPage') == -1){        
+        component.bindingContext = new BrowseViewModel(component);
+    }
 }

@@ -6,6 +6,11 @@ import { SearchViewModel } from "./search-view-model";
 
 export function onLoaded(args: EventData) {
     const component = <StackLayout>args.object;
+
+    if(isAndroid){
+        component.getViewById('searchBar').android.setFocusable(false)
+    }
+    
     if(Object.keys(component.bindingContext).indexOf('SearchPage') == -1){
         component.bindingContext = new SearchViewModel(component);
     }

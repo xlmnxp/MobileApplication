@@ -13,5 +13,5 @@ Feel free to customize layouts and components to change how the tab view looks.
                 <Label class="categoryDescription" text="{{ description }}" textWrap="true" col="1" row="1"/>
             </GridLayout>
         </ListView.itemTemplate>
-    </ListView>    
+    </ListView>
 </GridLayout>

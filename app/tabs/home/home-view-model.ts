@@ -12,14 +12,18 @@ export class HomeViewModel extends Observable {
         super();
         fetch(config.url + "categories.json").then(res => res.json())
         .then(res =>{
-            res.category_list.categories = res.category_list.categories.map(category => {
+            let categories = res.category_list.categories.map(category => {
                 if(category.uploaded_logo){
                     category.uploaded_logo.url = config.url + category.uploaded_logo.url;
                 }
                 
+                if(category.description){
+                    category.description = category.description.replace(/<[^>]*>/g,'');
+                }
+
                 return category;
             });
-            this.categories.push(res.category_list.categories);
+            this.categories.push(categories);
         });
 
         this.categories.on("change",()=>{
