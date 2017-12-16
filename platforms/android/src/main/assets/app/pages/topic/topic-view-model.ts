@@ -2,13 +2,16 @@ import { Observable } from "data/observable";
 import { ObservableArray } from "data/observable-array/observable-array";
 import { Page } from 'ui/page';
 import { WebView } from 'ui/web-view';
+import { Repeater } from 'ui/repeater';
 import { ActivityIndicator } from "ui/activity-indicator";
 import moment = require("moment");
 import { ObservableProperty } from "../../shared/observable-property-decorator";
 import { config } from "../../config";
 
 export class TopicViewModel extends Observable {
-    @ObservableProperty() title:string = "";
+    @ObservableProperty() public title:string = "";
+    @ObservableProperty() public topicInfo:Observable = new Observable();
+    @ObservableProperty() public topicReplies = [];
     constructor(public TopicPage:Page, public topicId:number, public topicTitle:string) {
         super();
         this.title = topicTitle;
@@ -84,6 +87,24 @@ export class TopicViewModel extends Observable {
                     margin: 0 0 10px 0;
                 }</style>`.trim()
             + res.post_stream.posts[0].cooked;
+            
+            res.post_stream.posts = res.post_stream.posts.map(post =>{
+
+                post.created_at = moment(post.created_at).locale("ar").fromNow();
+                
+                if(post.avatar_template){
+                    if(post.avatar_template.indexOf('http') == -1){
+                        post.avatar_template = (config.url + "." + post.avatar_template.replace("{size}","80")).replace('./','');
+                    }
+                }
+                return post;
+            });
+
+            let replies = res.post_stream.posts;
+            replies.shift();
+            this.topicInfo = res.post_stream.posts[0];
+            this.topicReplies = replies;
+
         });
     }
 }

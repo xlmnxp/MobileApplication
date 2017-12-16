@@ -1,0 +1,44 @@
+@import '../../app-variables';
+
+.topicInfo{
+    height: 100;
+    background-color: scale-color($item-active-color, $lightness: 95%);
+    border-bottom-style: solid;
+    border-bottom-width: 2vh;
+    border-bottom-color: scale-color($item-active-color, $lightness: 98%);
+}
+
+.topicReplies{
+    height: 50;
+    background-color: scale-color($side-drawer-header-brand, $lightness: 95%);
+    border-bottom-style: solid;
+    border-bottom-width: 2vh;
+    border-bottom-color: scale-color($side-drawer-header-brand, $lightness: 98%);
+}
+
+.userAvatar{
+    width: 80;
+    height: 80;
+    border-radius: 100%;
+    border-width: 4vh;
+    border-style: solid;
+    border-color: $item-active-icon-color;
+    vertical-align: middle;
+    margin: 9vh;
+}
+
+.topicTitle{
+    font-size: 28px;
+    vertical-align: middle;
+    padding: 2vh;
+}
+
+.topicCreated,.topicUsername{
+    font-size: 18px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.topicUsername{
+    margin: 1vh;
+}
