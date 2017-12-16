@@ -10,15 +10,20 @@ import { config } from "../../config";
 
 export class TopicViewModel extends Observable {
     @ObservableProperty() public title:string = "";
-    @ObservableProperty() public topicInfo:Observable = new Observable();
+    @ObservableProperty() public topicInfo:object = {};
+    // @ObservableProperty() public topicReplies:ObservableArray<any> = new ObservableArray([]);
     @ObservableProperty() public topicReplies = [];
     constructor(public TopicPage:Page, public topicId:number, public topicTitle:string) {
         super();
         this.title = topicTitle;
         fetch(`${config.url}t/topic/${topicId}.json`).then(res => res.json())
         .then(res =>{
-            let topicView:WebView = TopicPage.getViewById("topicView");
-            topicView.src = `<style>a {
+            let topicView:WebView = TopicPage.getViewById("topicView");            
+            res.post_stream.posts = res.post_stream.posts.map(post =>{
+
+                post.created_at = moment(post.created_at).locale("ar").fromNow();
+                
+                post.cooked = `<style>a {
                     background: #00ff9508;
                     display: block;
                     margin: 5px;
@@ -85,13 +90,35 @@ export class TopicViewModel extends Observable {
                 aside.onebox .onebox-body h3, aside.onebox .onebox-body h4 {
                     font-size: 1.17em;
                     margin: 0 0 10px 0;
+                }
+                .quote .avatar{
+                    height: 1.25em !important;
+                    width: 1.25em !important;
+                    min-height: 0%;
+                    min-width: 0%;
+                    max-height: 100%;
+                    max-width: 100%;
+                    border-radius: 50%;
+                }
+                aside.quote .title {
+                    border-right: 5px solid #e9e9e9;
+                    background-color: #f9f9f9;
+                    color: #646464;
+                    padding: 12px 12px 1px 12px;
+                }
+                blockquote {
+                    margin-right: 0;
+                    margin-left: 0;
+                    padding: 12px;
+                    border-right: 5px solid #e9e9e9;
+                    background-color: #f9f9f9;
+                    clear: both;
+                }
+                aside.quote blockquote {
+                    margin-top: 0;
                 }</style>`.trim()
-            + res.post_stream.posts[0].cooked;
-            
-            res.post_stream.posts = res.post_stream.posts.map(post =>{
+            + post.cooked;
 
-                post.created_at = moment(post.created_at).locale("ar").fromNow();
-                
                 if(post.avatar_template){
                     if(post.avatar_template.indexOf('http') == -1){
                         post.avatar_template = (config.url + "." + post.avatar_template.replace("{size}","80")).replace('./','');
@@ -100,10 +127,14 @@ export class TopicViewModel extends Observable {
                 return post;
             });
 
-            let replies = res.post_stream.posts;
+            let topicReplies:Repeater = TopicPage.getViewById('topicReplies');
+            let replies = JSON.parse(JSON.stringify(res.post_stream.posts));
             replies.shift();
+            
             this.topicInfo = res.post_stream.posts[0];
             this.topicReplies = replies;
+
+            topicReplies.refresh();
 
         });
     }

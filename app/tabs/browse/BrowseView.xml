@@ -14,7 +14,7 @@ Feel free to customize layouts and components to change how the tab view looks.
                     <Label class="topicDetails" textWrap="true">
                         <FormattedString>
                             <Span class="fa" text="&#xf112; " style="font-size: 20px;"></Span>
-                            <Span text="{{ ' ' + reply_count }}" fontWeight="Bold"></Span>
+                            <Span text="{{ ' ' + posts_count }}" fontWeight="Bold"></Span>
                         </FormattedString>
                     </Label>
                     <Label class="topicDetails" textWrap="true" col="1" verticalAlign="middle">
