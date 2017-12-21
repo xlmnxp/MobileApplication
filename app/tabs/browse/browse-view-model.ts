@@ -24,6 +24,8 @@ export class BrowseViewModel extends Observable {
                     }
                 }
 
+                topic.posts_count -= 1; 
+
                 return topic;
             });
             this.latestTopics.push(topics);

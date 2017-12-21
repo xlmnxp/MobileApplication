@@ -51,6 +51,13 @@ export class SearchViewModel extends Observable {
             if(res.topics){
                 let dataTopics = res.topics.map(topic => {
                     topic.created_at = moment(topic.created_at).locale("ar").fromNow();
+                    
+                    if(topic.image_url){
+                        if(topic.image_url.indexOf('http') == -1){
+                            topic.image_url = (config.url + "." + topic.image_url).replace('./','');
+                        }
+                    }
+                    
                     return topic;
                 });
                 this.searchResult.push(dataTopics);

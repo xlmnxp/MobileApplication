@@ -2,10 +2,10 @@
 
 .topicInfo{
     height: 100;
-    background-color: scale-color($item-active-color, $lightness: 95%);
+    background-color: scale-color(#CCE5FF, $lightness: 50%);
     border-bottom-style: solid;
-    border-bottom-width: 2vh;
-    border-bottom-color: scale-color($item-active-color, $lightness: 98%);
+    border-bottom-width: 5vh;
+    border-bottom-color: scale-color(#CCE5FF, $lightness: 70%);
 }
 
 .topicReplies{
@@ -28,6 +28,8 @@
     font-size: 28px;
     vertical-align: middle;
     padding: 2vh;
+    font-weight: bold;
+    color: black;
 }
 
 .topicCreated,.topicUsername{

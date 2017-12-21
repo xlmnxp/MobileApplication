@@ -1,8 +1,36 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" navigatedTo="onNavigatedTo">
-    <ActionBar class="action-bar">
-      <Label text="{{ title }}" class="action-bar-title" />
-    </ActionBar>
-    <GridLayout>
-        <WebView id="topicView" loaded="disableZoom"/>
-    </GridLayout>
+        <ActionBar class="action-bar">
+            <Label text="{{ title }}" class="action-bar-title" />
+        </ActionBar>
+        <ScrollView>
+        <StackLayout>
+            <GridLayout rows="*,*" columns="auto,*,*" class="topicInfo">
+                <Image src="{{ topicInfo.avatar_template }}" stretch="fill" row="0" col="0" rowSpan="2" class="userAvatar"/>
+                
+                <Label text="{{ title }}" row="0" col="1" colSpan="3" class="topicTitle"/>                
+                <Label text="{{ topicInfo.created_at }}" row="1" col="1" class="topicCreated"/>
+                <Button text="{{ topicInfo.name }}" row="1" col="2" class="btn btn-primary btn-active topicUsername"/>
+            </GridLayout>
+            <WebView src="{{ topicInfo.cooked }}" loaded="disableZoom" />
+            <GridLayout class="topicReplies">
+                <Label text="الردود" class="topicTitle"/>
+            </GridLayout>
+            <Repeater items="{{ topicReplies }}" id="topicReplies">
+                <Repeater.itemsLayout>
+                    <StackLayout />
+                </Repeater.itemsLayout>
+                <Repeater.itemTemplate>
+                    <StackLayout>
+                        <GridLayout rows="*" columns="auto,*,*" class="topicInfo">
+                            <Image src="{{ avatar_template }}" stretch="fill" row="0" col="0" rowSpan="2" class="userAvatar"/>
+                            
+                            <Label text="{{ created_at }}" col="1" class="topicCreated"/>
+                            <Button text="{{ name }}" col="2" class="btn btn-primary btn-active topicUsername"/>
+                        </GridLayout>
+                        <WebView src="{{ cooked }}" loaded="disableZoom" />                            
+                    </StackLayout>
+                </Repeater.itemTemplate>
+            </Repeater>
+        </StackLayout>
+    </ScrollView>
 </Page>

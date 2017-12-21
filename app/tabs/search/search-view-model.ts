@@ -58,6 +58,8 @@ export class SearchViewModel extends Observable {
                         }
                     }
                     
+                    topic.posts_count -= 1; 
+
                     return topic;
                 });
                 this.searchResult.push(dataTopics);

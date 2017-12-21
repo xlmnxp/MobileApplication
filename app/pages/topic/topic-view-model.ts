@@ -23,7 +23,7 @@ export class TopicViewModel extends Observable {
 
                 post.created_at = moment(post.created_at).locale("ar").fromNow();
                 
-                post.cooked = `<style>a {
+                post.cooked = `<html><head><base href="${config.url}" target="_blank"><style>a {
                     background: #00ff9508;
                     display: block;
                     margin: 5px;
@@ -116,8 +116,8 @@ export class TopicViewModel extends Observable {
                 }
                 aside.quote blockquote {
                     margin-top: 0;
-                }</style>`.trim()
-            + post.cooked;
+                }</style></head><body>`.trim()
+            + post.cooked + `</body></html>`;
 
                 if(post.avatar_template){
                     if(post.avatar_template.indexOf('http') == -1){

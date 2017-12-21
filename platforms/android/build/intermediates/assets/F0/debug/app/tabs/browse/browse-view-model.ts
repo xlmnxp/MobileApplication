@@ -8,18 +8,25 @@ import { topmost } from 'ui/frame';
 import moment = require("moment");
 import { ObservableProperty } from "../../shared/observable-property-decorator";
 import { config } from '../../config';
-
+import { parse } from "url"
 export class BrowseViewModel extends Observable {
     @ObservableProperty() public latestTopics: ObservableArray<any> = new ObservableArray([]);
     constructor(public BrowserPage:StackLayout) {
         super();
         fetch(config.url + "latest.json").then(res => res.json())
         .then(res => {
-            let dataTopics = res.topic_list.topics.map(topic => {
+            let topics = res.topic_list.topics.map(topic => {
                 topic.created_at = moment(topic.created_at).locale("ar").fromNow();
+
+                if(topic.image_url){
+                    if(topic.image_url.indexOf('http') == -1){
+                        topic.image_url = (config.url + "." + topic.image_url).replace('./','');
+                    }
+                }
+
                 return topic;
             });
-            this.latestTopics.push(dataTopics);
+            this.latestTopics.push(topics);
         });
 
         this.latestTopics.on("change",()=>{

@@ -24,6 +24,8 @@ export class CategoryViewModel extends Observable {
                     }
                 }
 
+                topic.posts_count -= 1; 
+
                 return topic;
             });
             this.topics.push(dataTopics);
