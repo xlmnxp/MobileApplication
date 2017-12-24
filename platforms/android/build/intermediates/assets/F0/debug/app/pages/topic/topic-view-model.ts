@@ -21,11 +21,11 @@ export class TopicViewModel extends Observable {
             let topicView:WebView = TopicPage.getViewById("topicView");            
             res.post_stream.posts = res.post_stream.posts.map(post =>{
 
-                post.created_at = moment(post.created_at).locale("ar").fromNow();
+                post.created_at = moment(post.created_at).locale(config.language).fromNow();
                 
-                post.cooked = `<style>a {
+                post.cooked = `<html><head><base href="${config.url}" target="_blank"><style>a {
                     background: #00ff9508;
-                    display: block;
+                    display: inline-block;
                     margin: 5px;
                     color: #0080d0;
                     padding: 7px;
@@ -36,7 +36,7 @@ export class TopicViewModel extends Observable {
                     text-align: center;
                 }
                 * {
-                    direction: rtl;
+                    direction: ${config.direction};
                     font-size: 100%;
                 }
                 img {
@@ -46,7 +46,6 @@ export class TopicViewModel extends Observable {
                     height: auto;
                 }
                 code,pre {
-                    word-wrap: break-word;
                     direction: ltr !important;
                     text-align: left !important;
                 }
@@ -56,6 +55,8 @@ export class TopicViewModel extends Observable {
                     color: #222;
                     background: #f9f9f9;
                     max-height: 500px;
+                    clear: both;
+                    overflow: auto;
                 }
                 img.emoji {
                     width: 1em;
@@ -116,8 +117,8 @@ export class TopicViewModel extends Observable {
                 }
                 aside.quote blockquote {
                     margin-top: 0;
-                }</style>`.trim()
-            + post.cooked;
+                }</style></head><body>`.trim()
+            + post.cooked + `</body></html>`;
 
                 if(post.avatar_template){
                     if(post.avatar_template.indexOf('http') == -1){

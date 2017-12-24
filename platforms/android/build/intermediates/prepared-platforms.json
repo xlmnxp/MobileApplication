@@ -1,5 +1,6 @@
 {
     "moment": true,
+    "nativescript-pulltorefresh": true,
     "nativescript-theme-core": true,
     "tns-core-modules": true,
     "url": true,

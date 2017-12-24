@@ -6,7 +6,7 @@ import { HomeViewModel } from "./home-view-model";
 
 export function onLoaded(args: EventData) {
     const component = <StackLayout>args.object;
-    if(Object.keys(component.bindingContext).indexOf('HomePage') == -1){        
+    if(Object.keys(component.bindingContext || {}).indexOf('HomePage') == -1){        
         component.bindingContext = new HomeViewModel(component);
     }
 }

@@ -50,7 +50,7 @@ export class SearchViewModel extends Observable {
         .then(res =>{
             if(res.topics){
                 let dataTopics = res.topics.map(topic => {
-                    topic.created_at = moment(topic.created_at).locale("ar").fromNow();
+                    topic.created_at = moment(topic.created_at).locale(config.language).fromNow();
                     
                     if(topic.image_url){
                         if(topic.image_url.indexOf('http') == -1){
@@ -58,6 +58,8 @@ export class SearchViewModel extends Observable {
                         }
                     }
                     
+                    topic.posts_count -= 1; 
+
                     return topic;
                 });
                 this.searchResult.push(dataTopics);

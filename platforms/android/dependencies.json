@@ -1,5 +1,9 @@
 [
     {
+        "name": "nativescript-pulltorefresh",
+        "directory": "../../node_modules/nativescript-pulltorefresh"
+    },
+    {
         "name": "nativescript-theme-core",
         "directory": "../../node_modules/nativescript-theme-core"
     },

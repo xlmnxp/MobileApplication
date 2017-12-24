@@ -16,13 +16,15 @@ export class BrowseViewModel extends Observable {
         fetch(config.url + "latest.json").then(res => res.json())
         .then(res => {
             let topics = res.topic_list.topics.map(topic => {
-                topic.created_at = moment(topic.created_at).locale("ar").fromNow();
+                topic.created_at = moment(topic.created_at).locale(config.language).fromNow();
 
                 if(topic.image_url){
                     if(topic.image_url.indexOf('http') == -1){
                         topic.image_url = (config.url + "." + topic.image_url).replace('./','');
                     }
                 }
+
+                topic.posts_count -= 1; 
 
                 return topic;
             });

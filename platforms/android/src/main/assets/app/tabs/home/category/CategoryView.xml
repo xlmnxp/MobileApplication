@@ -1,51 +1,54 @@
-<Page xmlns="http://www.nativescript.org/tns.xsd" navigatedTo="onNavigatedTo">
+<Page xmlns="http://www.nativescript.org/tns.xsd" navigatedTo="onNavigatedTo" xmlns:PullRefresh="nativescript-pulltorefresh">
     <ActionBar class="action-bar">
-      <Label text="{{ title }}" class="action-bar-title" />
+        <Label text="{{ title }}" class="action-bar-title" />
+        <ActionItem ios.systemIcon="1" android.systemIcon="ic_menu_close_clear_cancel" ios.position="right" tap="{{ close }}"></ActionItem>
     </ActionBar>
     <GridLayout>
         <ActivityIndicator width="100" height="100" id="loading" busy="true"/>
+        <PullRefresh:PullToRefresh refresh="{{ refreshList }}">
         <ListView items="{{ topics }}" id="topicsList" itemTap="{{ navigateToTopic }}">
-        <ListView.itemTemplate>
-            <GridLayout columns="auto,*" rows="*,auto,auto">
-                <Image class="topicImage" src="{{ image_url }}" stretch="aspectFit" row="0" rowSpan="1" col="0" visibility="{{ image_url ? 'visible' : 'collapsed' }}"/>
-                <Label class="topicTitle" text="{{ title }}" col="1" row="0" textWrap="true"/>
-                <GridLayout row="1" columns="*,*,*" verticalAlign="middle" col="0" colSpan="2">
-                    <Label class="topicDetails" textWrap="true">
-                        <FormattedString>
-                            <Span class="fa" text="&#xf112; " style="font-size: 20px;"></Span>
-                            <Span text="{{ ' ' + posts_count }}" fontWeight="Bold"></Span>
-                        </FormattedString>
-                    </Label>
-                    <Label class="topicDetails" textWrap="true" col="1" verticalAlign="middle">
-                        <FormattedString>
-                            <Span class="fa" text="&#xf06e; " style="font-size: 20px;"></Span>
-                            <Span text="{{ ' ' + views }}" fontWeight="Bold"></Span>
-                        </FormattedString>
-                    </Label>
-                    <Label class="topicDetails" textWrap="true" col="2">
-                        <FormattedString>
-                            <Span class="fa" text="&#xf073; " style="font-size: 20px;"></Span>
-                            <Span text="{{ created_at }}" fontWeight="Bold"></Span>
-                        </FormattedString>
-                    </Label>
+            <ListView.itemTemplate>
+                <GridLayout columns="auto,*" rows="*,auto,auto">
+                    <Image class="topicImage" src="{{ image_url }}" stretch="aspectFit" row="0" rowSpan="1" col="0" visibility="{{ image_url ? 'visible' : 'collapsed' }}"/>
+                    <Label class="topicTitle" text="{{ title }}" col="1" row="0" textWrap="true"/>
+                    <GridLayout row="1" columns="*,*,*" verticalAlign="middle" col="0" colSpan="2">
+                        <Label class="topicDetails" textWrap="true">
+                            <FormattedString>
+                                <Span class="fa" text="&#xf112; " style="font-size: 20px;"></Span>
+                                <Span text="{{ ' ' + posts_count }}" fontWeight="Bold"></Span>
+                            </FormattedString>
+                        </Label>
+                        <Label class="topicDetails" textWrap="true" col="1" verticalAlign="middle">
+                            <FormattedString>
+                                <Span class="fa" text="&#xf06e; " style="font-size: 20px;"></Span>
+                                <Span text="{{ ' ' + views }}" fontWeight="Bold"></Span>
+                            </FormattedString>
+                        </Label>
+                        <Label class="topicDetails" textWrap="true" col="2">
+                            <FormattedString>
+                                <Span class="fa" text="&#xf073; " style="font-size: 20px;"></Span>
+                                <Span text="{{ created_at }}" fontWeight="Bold"></Span>
+                            </FormattedString>
+                        </Label>
+                    </GridLayout>
+                    <GridLayout row="2" class="topicTags" visibility="{{ (tags.length != 0) ? 'visible' : 'collapsed' }}" col="0" colSpan="2">
+                        <Repeater items="{{ tags }}">
+                            <Repeater.itemsLayout>
+                                <FlexboxLayout flexWrap="wrap" justifyContent="flex-end" />
+                            </Repeater.itemsLayout>
+                            <Repeater.itemTemplate>
+                                <Label class="tagLabel" style="margin:3px;">
+                                    <FormattedString>
+                                        <Span text="{{ $value + ' ' }}"></Span>
+                                        <Span class="fa" text="&#xf02c;" style="font-size: 12px;"></Span>
+                                    </FormattedString>
+                                </Label>
+                            </Repeater.itemTemplate>
+                        </Repeater>
+                    </GridLayout>
                 </GridLayout>
-                <GridLayout row="2" class="topicTags" visibility="{{ (tags.length != 0) ? 'visible' : 'collapsed' }}" col="0" colSpan="2">
-                    <Repeater items="{{ tags }}">
-                        <Repeater.itemsLayout>
-                            <FlexboxLayout flexWrap="wrap" justifyContent="flex-end" />
-                        </Repeater.itemsLayout>
-                        <Repeater.itemTemplate>
-                            <Label class="tagLabel" style="margin:3px;">
-                                <FormattedString>
-                                    <Span text="{{ $value + ' ' }}"></Span>
-                                    <Span class="fa" text="&#xf02c;" style="font-size: 12px;"></Span>
-                                </FormattedString>
-                            </Label>
-                        </Repeater.itemTemplate>
-                    </Repeater>
-                </GridLayout>
-            </GridLayout>
-        </ListView.itemTemplate>
+            </ListView.itemTemplate>
         </ListView>
+        </PullRefresh:PullToRefresh>
     </GridLayout>
 </Page>

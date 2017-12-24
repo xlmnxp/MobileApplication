@@ -1,6 +1,7 @@
 import { Observable } from "data/observable";
 import { ObservableArray } from "data/observable-array/observable-array";
 import { Page } from 'ui/page';
+import { PullToRefresh } from "nativescript-pulltorefresh";
 import { ActivityIndicator } from "ui/activity-indicator";
 import { topmost } from 'ui/frame';
 import moment = require("moment");
@@ -16,7 +17,7 @@ export class CategoryViewModel extends Observable {
         fetch(`${config.url}c/${categoryId}.json`).then(res => res.json())
         .then(res =>{
             let dataTopics = res.topic_list.topics.map(topic => {
-                topic.created_at = moment(topic.created_at).locale("ar").fromNow();
+                topic.created_at = moment(topic.created_at).locale(config.language).fromNow();
 
                 if(topic.image_url){
                     if(topic.image_url.indexOf('http') == -1){
@@ -53,5 +54,37 @@ export class CategoryViewModel extends Observable {
                 topicTitle: topicTitle
             }
         });
+    }
+
+    public refreshList(args){
+        let pullRefresh:PullToRefresh = args.object;
+
+        while(this.topics.length){
+            this.topics.pop();
+        }
+        
+        pullRefresh.refreshing = false;
+
+        fetch(`${config.url}c/${this.categoryId}.json`).then(res => res.json())
+        .then(res =>{
+            let dataTopics = res.topic_list.topics.map(topic => {
+                topic.created_at = moment(topic.created_at).locale(config.language).fromNow();
+
+                if(topic.image_url){
+                    if(topic.image_url.indexOf('http') == -1){
+                        topic.image_url = (config.url + "." + topic.image_url).replace('./','');
+                    }
+                }
+
+                topic.posts_count -= 1; 
+
+                return topic;
+            });
+            this.topics.push(dataTopics);
+        });
+    }
+
+    public close(){
+        topmost().goBack();
     }
 }

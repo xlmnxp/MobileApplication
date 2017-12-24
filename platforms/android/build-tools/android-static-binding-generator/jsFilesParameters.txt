@@ -2,6 +2,8 @@
 /home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/bundle-config.js
 /home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/config.js
 /home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/shared/observable-property-decorator.js
+/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/tns_modules/nativescript-pulltorefresh/pulltorefresh.js
+/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/tns_modules/nativescript-pulltorefresh/pulltorefresh-common.js
 /home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/tns_modules/tns-core-modules/bundle-entry-points.js
 /home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/tns_modules/tns-core-modules/fps-meter/fps-meter.js
 /home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/tns_modules/tns-core-modules/fps-meter/fps-native.js

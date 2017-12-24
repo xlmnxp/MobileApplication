@@ -11,7 +11,7 @@ export function onLoaded(args: EventData) {
         component.getViewById('searchBar').android.setFocusable(false)
     }
     
-    if(Object.keys(component.bindingContext).indexOf('SearchPage') == -1){
+    if(Object.keys(component.bindingContext || {}).indexOf('SearchPage') == -1){
         component.bindingContext = new SearchViewModel(component);
     }
 }
