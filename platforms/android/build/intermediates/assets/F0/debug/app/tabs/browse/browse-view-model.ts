@@ -5,10 +5,11 @@ import { ActivityIndicator } from 'ui/activity-indicator';
 import { FormattedString } from "text/formatted-string";
 import { Span } from "text/span";
 import { topmost } from 'ui/frame';
+import { PullToRefresh } from "nativescript-pulltorefresh";
 import moment = require("moment");
 import { ObservableProperty } from "../../shared/observable-property-decorator";
 import { config } from '../../config';
-import { parse } from "url"
+
 export class BrowseViewModel extends Observable {
     @ObservableProperty() public latestTopics: ObservableArray<any> = new ObservableArray([]);
     constructor(public BrowserPage:StackLayout) {
@@ -52,6 +53,34 @@ export class BrowseViewModel extends Observable {
                 topicId: topicId,
                 topicTitle: topicTitle
             }
+        });
+    }
+
+    public refreshList(args){
+        let pullRefresh:PullToRefresh = args.object;
+
+        while(this.latestTopics.length){
+            this.latestTopics.pop();
+        }
+        
+        pullRefresh.refreshing = false;
+
+        fetch(config.url + "latest.json").then(res => res.json())
+        .then(res => {
+            let topics = res.topic_list.topics.map(topic => {
+                topic.created_at = moment(topic.created_at).locale(config.language).fromNow();
+
+                if(topic.image_url){
+                    if(topic.image_url.indexOf('http') == -1){
+                        topic.image_url = (config.url + "." + topic.image_url).replace('./','');
+                    }
+                }
+
+                topic.posts_count -= 1; 
+
+                return topic;
+            });
+            this.latestTopics.push(topics);
         });
     }
 }

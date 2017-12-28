@@ -5,6 +5,7 @@ Feel free to customize layouts and components to change how the tab view looks.
 <!-- class="page-content" -->
 <GridLayout loaded="onLoaded" xmlns:PullRefresh="nativescript-pulltorefresh">
     <ActivityIndicator width="100" height="100" id="loading" busy="true"/>
+    <PullRefresh:PullToRefresh refresh="{{ refreshList }}">
     <ListView items="{{ latestTopics }}" id="latestTopicsList" itemTap="{{ navigateToTopic }}">
         <ListView.itemTemplate>
             <GridLayout columns="auto,*" rows="*,auto,auto">
@@ -47,5 +48,6 @@ Feel free to customize layouts and components to change how the tab view looks.
                 </GridLayout>
             </GridLayout>
         </ListView.itemTemplate>
-    </ListView>
+    </ListView> 
+    </PullRefresh:PullToRefresh>
 </GridLayout>

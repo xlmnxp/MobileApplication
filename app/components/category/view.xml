@@ -1,0 +1,17 @@
+<GridLayout loaded="onLoaded">
+    <ActivityIndicator width="100" height="100" busy="true" visibility="{{ loading ? 'visible' : 'collapsed' }}" />
+    <ScrollView orientation="horizontal" loaded="disableFocus">
+        <Repeater items="{{ categoryTopics, categoryTopics }}">
+            <Repeater.itemsLayout>
+                <StackLayout orientation="horizontal"/>
+            </Repeater.itemsLayout>
+            <Repeater.itemTemplate>
+                <GridLayout rows="*,auto" col="100">
+                    <Image src="{{ image_url }}" stretch="aspectFit" tap="navigateToTopic" row="0" width="80" height="80"/>
+                    <Button class="btn btn-primary btn-active" text="{{ title }}" tap="navigateToTopic"
+                    textWrap="true" row="1" width="120" height="40" margin="3vh" loaded="disableFocus"/>
+                </GridLayout>
+            </Repeater.itemTemplate>
+        </Repeater>
+    </ScrollView>
+</GridLayout>

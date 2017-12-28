@@ -3,15 +3,18 @@ This is the component view that represents the 'Home' tab.
 Feel free to customize layouts and components to change how the tab view looks.
 -->
 <!-- class="page-content" -->
-<GridLayout loaded="onLoaded">
+<GridLayout loaded="onLoaded" xmlns:PullRefresh="nativescript-pulltorefresh" xmlns:category="components/category">
     <ActivityIndicator width="100" height="100" id="loading" busy="true" />
+    <PullRefresh:PullToRefresh refresh="{{ refreshList }}">
     <ListView items="{{ categories }}" id="categoriesList" itemTap="{{ navigateToCategory }}">
         <ListView.itemTemplate>
-            <GridLayout rows="auto,*" columns="auto,*">
-                <Image class="userAvatar" stretch="fill" col="0" rowSpan="2" src="{{ uploaded_logo.url }}" borderColor="{{ '#' + color }}" visibility="{{ uploaded_logo.url ? 'visible' : 'collapsed' }}"/>
+            <GridLayout rows="auto,*,auto" columns="auto,*">
+                <Image class="userAvatar" stretch="aspectFit" col="0" rowSpan="2" src="{{ uploaded_logo.url }}" borderColor="{{ '#' + color }}" visibility="{{ uploaded_logo.url ? 'visible' : 'collapsed' }}"/>
                 <Button class="categoryTitle btn btn-primary btn-active" text="{{ name }}" col="1" row="0" android:backgroundColor="{{ '#' + color }}" ios:backgroundColor="rgba(0,0,0,0)" ios:color="{{ '#' + color }}" loaded="disableFocus"/>
                 <Label class="categoryDescription" text="{{ description }}" textWrap="true" col="1" row="1"/>
+                <category:view categoryId="{{ id }}" row="2" col="0" colSpan="2"></category:view>
             </GridLayout>
         </ListView.itemTemplate>
     </ListView>
+    </PullRefresh:PullToRefresh>
 </GridLayout>

@@ -1,6 +1,8 @@
 /home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/app.js
 /home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/bundle-config.js
 /home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/config.js
+/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/components/category/view.js
+/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/components/category/category-view-component.js
 /home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/shared/observable-property-decorator.js
 /home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/tns_modules/nativescript-pulltorefresh/pulltorefresh.js
 /home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/assets/app/tns_modules/nativescript-pulltorefresh/pulltorefresh-common.js

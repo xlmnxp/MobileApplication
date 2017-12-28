@@ -1,6 +1,7 @@
 import { Observable } from "data/observable";
 import { ObservableArray } from "data/observable-array/observable-array";
 import { StackLayout } from 'ui/layouts/stack-layout';
+import { PullToRefresh } from "nativescript-pulltorefresh";
 import { ActivityIndicator } from "ui/activity-indicator";
 import { topmost } from "ui/frame";
 import { ObservableProperty } from "../../shared/observable-property-decorator";
@@ -47,6 +48,32 @@ export class HomeViewModel extends Observable {
                 categoryId: categoryId,
                 categoryName: categoryName
             }
+        });
+    }
+
+    public refreshList(args){
+        let pullRefresh:PullToRefresh = args.object;
+
+        while(this.categories.length){
+            this.categories.pop();
+        }
+        
+        pullRefresh.refreshing = false;
+
+        fetch(config.url + "categories.json").then(res => res.json())
+        .then(res =>{
+            let categories = res.category_list.categories.map(category => {
+                if(category.uploaded_logo){
+                    category.uploaded_logo.url = config.url + category.uploaded_logo.url;
+                }
+                
+                if(category.description){
+                    category.description = category.description.replace(/<[^>]*>/g,'');
+                }
+
+                return category;
+            });
+            this.categories.push(categories);
         });
     }
 }
