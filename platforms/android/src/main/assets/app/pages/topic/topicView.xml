@@ -32,6 +32,7 @@
                     </StackLayout>
                 </Repeater.itemTemplate>
             </Repeater>
+            <Button text="تحميل المزيد من الردود" tap="{{ loadmore_replies }}" class="btn btn-primary btn-active" />
         </StackLayout>
     </ScrollView>
 </Page>
