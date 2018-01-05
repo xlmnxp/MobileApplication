@@ -4,10 +4,13 @@ Feel free to customize layouts and components to change how the tab view looks.
 -->
 <!-- class="page-content" -->
 <GridLayout rows="auto,*" loaded="onLoaded">
-    <SearchBar id="searchBar" hint="بحث" text="" loaded="disableFocus" submit="{{ doSearch }}" row="0"/>
+    <SearchBar id="searchBar" hint="بحث" text="" loaded="disableFocus" submit="{{ doSearch }}" clear="{{ doClear }}" row="0"/>
     <GridLayout row="1" rows="*">
         <ActivityIndicator width="100" height="100" id="loading" busy="true"/>
-        <Label text="لا توجد أية نتائج." id="SearchMessage"></Label>
+        <StackLayout id="SearchMessage" class="page-content">
+            <Label text="&#xf002;" class="page-icon fa" />
+            <Label text="لا توجد أية نتائج." textWrap="true" class="page-placeholder" />
+        </StackLayout>
         <ListView items="{{ searchResult }}" itemTap="{{ navigateToTopic }}" row="0">
         <ListView.itemTemplate>
             <GridLayout columns="auto,*" rows="*,auto,auto">

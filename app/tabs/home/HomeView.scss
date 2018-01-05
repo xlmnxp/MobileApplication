@@ -15,3 +15,16 @@
 .categoryDescription{
     margin: 5vh;
 }
+
+.card{
+    margin: 2vh;
+    padding: 2vh;
+    border-color: lighten( gray, 48%);
+    border-width: 5vh;
+    border-style: solid;
+    border-radius: 5vh;
+    background-color: lighten(gray, 47%);
+    Button{
+        margin: 1vh;
+    }
+}

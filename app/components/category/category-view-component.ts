@@ -4,18 +4,19 @@ import { Observable } from "data/observable";
 import { ObservableArray } from "data/observable-array/observable-array";
 import { StackLayout } from "ui/layouts/stack-layout";
 import { ActivityIndicator } from "ui/activity-indicator";
+import { Repeater } from "ui/repeater";
 
 export class CategoryViewComponent extends Observable {
     @ObservableProperty() public categoryTopics:ObservableArray<any> = new ObservableArray([]);
     @ObservableProperty() public loading:Boolean = true;
+    public repeater:Repeater = this.Page.getViewById<Repeater>("repeater");
+
     constructor(public Page:StackLayout, public categoryId:number) {
         super();
-        
+
+        console.log('categoryId',categoryId);
         fetch(`${config.url}c/${categoryId}.json`).then(res => res.json())
         .then(res =>{
-            while(this.categoryTopics.length){
-                this.categoryTopics.pop();
-            }
 
             let dataTopics = res.topic_list.topics.slice(0,5).map(topic => {
 
@@ -31,7 +32,7 @@ export class CategoryViewComponent extends Observable {
             });
             this.categoryTopics.push(dataTopics);
         });
-
+        
         this.categoryTopics.on("change",()=>{
             if(this.categoryTopics.length > 0){
                 this.loading = false;
