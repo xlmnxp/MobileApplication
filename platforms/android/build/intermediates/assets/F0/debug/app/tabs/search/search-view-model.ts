@@ -72,6 +72,15 @@ export class SearchViewModel extends Observable {
         });
     }
 
+    public doClear() {
+        while (this.searchResult.length) { 
+            this.searchResult.pop();
+        }
+
+        this.activityIndicator.visibility = "collapse";                
+        this.searchMessage.visibility = "collapse";
+    }
+
     public navigateToTopic(topicIndex: any){
         let topic = this.searchResult.getItem(topicIndex.index);
         let topicId = topic.id;

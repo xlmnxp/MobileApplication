@@ -6,39 +6,23 @@
       <Label text="مجتمع أسس" class="action-bar-title" />
       <ActionItem ios.systemIcon="2" android.systemIcon="ic_menu_info_details" ios.position="right"></ActionItem>
     </ActionBar>
-
-    <!--
-    The TabView component provides a simple way to navigate between different views by
-    tapping on some of the tabs or by swiping between the views.
-    Learn more about the TabView component in this documentation article:
-    http://docs.nativescript.org/cookbook/ui/tab-view
-    -->
     <TabView selectedIndexChanged="onSelectedIndexChanged">
       <TabView.items>
-        <!--
-        To add a new TabView item, simply add a new <TabViewItem> component to the <TabView.items> collection.
-        Assign the <TabViewItem> component a "title" that will be displayed as the text of the tab item button.
-        -->
-        <TabViewItem android:class="fa" android:title="&#xf015;" android:style="font-size: 20px;" ios:title="الرئيسية" ios:iconSource="res://tabIcons/home">
+        <TabViewItem android:class="ion title" android:title="&#xf38f;" ios:title="الرئيسية" ios:iconSource="res://tabIcons/home">
           <TabViewItem.view>
-            <!--
-            You can declare the layout and components of each view inside the <TabViewItem.view> directly.
-            In this case the view contents and back end logic are separated in custom components.
-            You can find these components in their respective folders /home, /browse etc.
-            -->
-            <home:HomeView/>
+            <home:HomeView class="view"/>
           </TabViewItem.view>
         </TabViewItem>
 
-        <TabViewItem android:class="fa" android:title="&#xf1ea;" android:style="font-size: 20px;" ios:title="استعراض" ios:iconSource="res://tabIcons/browse">
+        <TabViewItem android:class="ion title" android:title="&#xf472;" ios:title="استعراض" ios:iconSource="res://tabIcons/browse">
           <TabViewItem.view>
-             <browse:BrowseView/>
+             <browse:BrowseView class="view"/>
           </TabViewItem.view>
         </TabViewItem>
 
-        <TabViewItem android:class="fa" android:title="&#xf002;" android:style="font-size: 20px;" ios:title="بحث" ios:iconSource="res://tabIcons/search">
+        <TabViewItem android:class="ion title" android:title="&#xf2f5;" ios:title="بحث" ios:iconSource="res://tabIcons/search">
           <TabViewItem.view>
-             <search:SearchView/>
+             <search:SearchView class="view"/>
           </TabViewItem.view>
         </TabViewItem>
       </TabView.items>

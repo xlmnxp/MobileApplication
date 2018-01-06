@@ -11,5 +11,5 @@ export function onNavigatedTo(args: EventData) {
         component.navigationContext.categoryId,
         component.navigationContext.categoryName);
     }
-
+    
 }

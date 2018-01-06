@@ -79,6 +79,8 @@ MERGED from [com.android.support:support-core-utils:25.3.1] /home/xlmnxp/Documen
 MERGED from [com.android.support:support-compat:25.3.1] /home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/exploded-aar/com.android.support/support-compat/25.3.1/AndroidManifest.xml:29:5-20
 	android:label
 		ADDED from /home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/AndroidManifest.xml:9:122-154
+	android:supportsRtl
+		ADDED from /home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/AndroidManifest.xml:9:187-213
 	android:allowBackup
 		ADDED from /home/xlmnxp/Documents/Nativescript/aosus/platforms/android/src/main/AndroidManifest.xml:9:65-91
 	android:icon

@@ -19,7 +19,7 @@
         To add a new TabView item, simply add a new <TabViewItem> component to the <TabView.items> collection.
         Assign the <TabViewItem> component a "title" that will be displayed as the text of the tab item button.
         -->
-        <TabViewItem title="الرئيسية" ios:iconSource="res://tabIcons/home">
+        <TabViewItem android:class="ion" android:title="&#xf38f;" android:style="font-size: 30em;" ios:title="الرئيسية" ios:iconSource="res://tabIcons/home">
           <TabViewItem.view>
             <!--
             You can declare the layout and components of each view inside the <TabViewItem.view> directly.
@@ -30,13 +30,13 @@
           </TabViewItem.view>
         </TabViewItem>
 
-        <TabViewItem title="استعراض" ios:iconSource="res://tabIcons/browse">
+        <TabViewItem android:class="ion" android:title="&#xf472;" android:style="font-size: 30em;" ios:title="استعراض" ios:iconSource="res://tabIcons/browse">
           <TabViewItem.view>
              <browse:BrowseView/>
           </TabViewItem.view>
         </TabViewItem>
 
-        <TabViewItem title="بحث" ios:iconSource="res://tabIcons/search">
+        <TabViewItem android:class="ion" android:title="&#xf2f5;" android:style="font-size: 30em;" ios:title="بحث" ios:iconSource="res://tabIcons/search">
           <TabViewItem.view>
              <search:SearchView/>
           </TabViewItem.view>

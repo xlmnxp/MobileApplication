@@ -1,8 +1,3 @@
-<!--
-This is the component view that represents the 'Home' tab.
-Feel free to customize layouts and components to change how the tab view looks.
--->
-<!-- class="page-content" -->
 <GridLayout loaded="onLoaded" xmlns:PullRefresh="nativescript-pulltorefresh" xmlns:category="components/category">
     <ActivityIndicator width="100" height="100" id="loading" busy="true" />
     <PullRefresh:PullToRefresh refresh="{{ refreshList }}">

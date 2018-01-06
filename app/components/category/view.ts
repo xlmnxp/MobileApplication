@@ -6,11 +6,14 @@ import { topmost } from "ui/frame";
 
 import { CategoryViewComponent } from "./category-view-component";
 
+var isLoaded = {};
+
 export function onLoaded(args: EventData) {
     const component = <StackLayout>args.object;
 
-    if(!component.bindingContext || Object.keys(component.bindingContext || {}).indexOf('Page') == -1){
+    if(!isLoaded[(<any>component).categoryId]){
         component.bindingContext = new CategoryViewComponent(component,(<any>component).categoryId);
+        isLoaded[(<any>component).categoryId] = true;
     }
 }
 
@@ -28,5 +31,9 @@ export function navigateToTopic(args: any){
     });
 }
 
+export function scrollViewSetup(args: any){
+    args.object.scrollToVerticalOffset(args.object.scrollableHeight, false);
+    disableFocus(args);
+}
 
 export const disableFocus = (args) => isAndroid ? args.object.android.setFocusable(false) : false;

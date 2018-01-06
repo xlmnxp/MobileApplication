@@ -3,9 +3,12 @@ import { StackLayout } from "ui/layouts/stack-layout";
 
 import { BrowseViewModel } from "./browse-view-model";
 
+var isLoaded = false;
+
 export function onLoaded(args: EventData) {
     const component = <StackLayout>args.object;
-    if(Object.keys(component.bindingContext || {}).indexOf('BrowserPage') == -1){        
+    if(!isLoaded){        
         component.bindingContext = new BrowseViewModel(component);
+        isLoaded = true;
     }
 }

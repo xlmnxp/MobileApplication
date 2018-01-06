@@ -3,7 +3,7 @@
     <ScrollView orientation="horizontal" loaded="disableFocus">
         <Repeater id="repeater" items="{{ categoryTopics,categoryTopics }}">
             <Repeater.itemsLayout>
-                <StackLayout orientation="horizontal"/>
+                <FlexboxLayout flexWrap="wrap" justifyContent="flex-end" />
             </Repeater.itemsLayout>
             <Repeater.itemTemplate>
                 <GridLayout class="card" rows="*,auto" col="100">

@@ -4,7 +4,20 @@
 .fa {
    font-family: "FontAwesome";
 }
-// Common page class
+
+.ion {
+    font-family: "ionicons";
+}
+
+.ion.title{
+    font-size: 30em;
+}
+
+.view{
+    font-size: 100%;
+    font: inherit;
+}
+
 .page-content {
     .page-placeholder {
         color: $page-icon-color;
@@ -22,7 +35,6 @@
     }
 }
 
-//Action bar
 ActionBar .action-bar-title {
     horizontal-align: center;
 }

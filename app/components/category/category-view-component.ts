@@ -14,7 +14,7 @@ export class CategoryViewComponent extends Observable {
     constructor(public Page:StackLayout, public categoryId:number) {
         super();
 
-        console.log('categoryId',categoryId);
+        // console.log('categoryId',categoryId);
         fetch(`${config.url}c/${categoryId}.json`).then(res => res.json())
         .then(res =>{
 
@@ -28,7 +28,7 @@ export class CategoryViewComponent extends Observable {
                     topic.image_url = "~/images/logo.png";
                 }
 
-                return {id: topic.id,title: topic.title, image_url: topic.image_url};
+                return topic;
             });
             this.categoryTopics.push(dataTopics);
         });

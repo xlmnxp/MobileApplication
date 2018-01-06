@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/res/merged/F0/debug/layout/abc_list_menu_item_radio.xml",
-        "source": "/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.1/res/layout/abc_list_menu_item_radio.xml"
-    },
-    {
         "merged": "/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/res/merged/F0/debug/layout/abc_popup_menu_header_item_layout.xml",
         "source": "/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.1/res/layout/abc_popup_menu_header_item_layout.xml"
+    },
+    {
+        "merged": "/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/res/merged/F0/debug/layout/abc_list_menu_item_radio.xml",
+        "source": "/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.1/res/layout/abc_list_menu_item_radio.xml"
     },
     {
         "merged": "/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/res/merged/F0/debug/layout/abc_action_menu_item_layout.xml",
@@ -16,12 +16,12 @@
         "source": "/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.1/res/layout/abc_action_menu_layout.xml"
     },
     {
-        "merged": "/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/res/merged/F0/debug/layout/abc_search_view.xml",
-        "source": "/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.1/res/layout/abc_search_view.xml"
-    },
-    {
         "merged": "/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/res/merged/F0/debug/layout/design_layout_snackbar.xml",
         "source": "/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/exploded-aar/com.android.support/design/25.3.1/res/layout/design_layout_snackbar.xml"
+    },
+    {
+        "merged": "/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/res/merged/F0/debug/layout/abc_search_view.xml",
+        "source": "/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.1/res/layout/abc_search_view.xml"
     },
     {
         "merged": "/home/xlmnxp/Documents/Nativescript/aosus/platforms/android/build/intermediates/res/merged/F0/debug/layout/design_bottom_navigation_item.xml",
