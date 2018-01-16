@@ -59,11 +59,7 @@ export class BrowseViewModel extends Observable {
     public refreshList(args){
         let pullRefresh:PullToRefresh = args.object;
 
-        while(this.latestTopics.length){
-            this.latestTopics.pop();
-        }
-        
-        pullRefresh.refreshing = false;
+        while(this.latestTopics.pop());
 
         fetch(config.url + "latest.json").then(res => res.json())
         .then(res => {
@@ -80,7 +76,11 @@ export class BrowseViewModel extends Observable {
 
                 return topic;
             });
+
+            pullRefresh.refreshing = false;
             this.latestTopics.push(topics);
-        });
+        }).catch(err => {
+            pullRefresh.refreshing = false;
+        });;
     }
 }

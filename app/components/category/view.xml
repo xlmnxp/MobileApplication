@@ -1,6 +1,6 @@
 <GridLayout loaded="onLoaded">
     <ActivityIndicator width="100" height="100" busy="true" visibility="{{ loading ? 'visible' : 'collapsed' }}" />
-    <ScrollView orientation="horizontal" loaded="disableFocus">
+    <ScrollView id="scrollview" orientation="horizontal" loaded="disableFocus">
         <Repeater id="repeater" items="{{ categoryTopics,categoryTopics }}">
             <Repeater.itemsLayout>
                 <FlexboxLayout flexWrap="wrap" justifyContent="flex-end" />

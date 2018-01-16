@@ -6,7 +6,7 @@
       <Label text="مجتمع أسس" class="action-bar-title" />
       <ActionItem ios.systemIcon="2" android.systemIcon="ic_menu_info_details" ios.position="right"></ActionItem>
     </ActionBar>
-    <TabView selectedIndexChanged="onSelectedIndexChanged">
+    <TabView id="tabview" selectedIndexChanged="onSelectedIndexChanged">
       <TabView.items>
         <TabViewItem android:class="ion title" android:title="&#xf38f;" ios:title="الرئيسية" ios:iconSource="res://tabIcons/home">
           <TabViewItem.view>

@@ -54,12 +54,8 @@ export class HomeViewModel extends Observable {
     public refreshList(args){
         let pullRefresh:PullToRefresh = args.object;
 
-        while(this.categories.length){
-            this.categories.pop();
-        }
+        while(this.categories.pop());
         
-        pullRefresh.refreshing = false;
-
         fetch(config.url + "categories.json").then(res => res.json())
         .then(res =>{
             let categories = res.category_list.categories.map(category => {
@@ -70,10 +66,14 @@ export class HomeViewModel extends Observable {
                 if(category.description){
                     category.description = category.description.replace(/<[^>]*>/g,'');
                 }
-
+                
                 return category;
             });
+            
+            pullRefresh.refreshing = false;
             this.categories.push(categories);
-        });
+        }).catch(err => {
+            pullRefresh.refreshing = false;
+        });;
     }
 }
